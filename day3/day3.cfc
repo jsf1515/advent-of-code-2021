@@ -52,8 +52,8 @@ component {
         //totalLoops = 1;
 
         for( i = 1; i <= totalLoops; i++){
-            inputs = recurseFunction(inputs,i);
-            inputs2 = recurseFunction2(inputs2,i);
+            inputs = doFunction(inputs,i);
+            inputs2 = doFunction2(inputs2,i);
         }
 
         print.line(inputs);
@@ -65,7 +65,7 @@ component {
         print.line( inputBaseN(inputs[1],2) * inputBaseN(inputs2[1],2))
     }
 
-    function recurseFunction( itemsArray, positionNumber ){
+    function doFunction( itemsArray, positionNumber ){
         var arraySize = arguments.itemsArray.len();
         var oneCounter = 0;
         
@@ -88,7 +88,7 @@ component {
         return newArray;
     }
 
-    function recurseFunction2( itemsArray, positionNumber ){
+    function doFunction2( itemsArray, positionNumber ){
         var arraySize = arguments.itemsArray.len();
         var oneCounter = 0;
 
