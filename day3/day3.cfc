@@ -5,7 +5,6 @@ component {
         var inputs = fileRead("./inputs.txt")
             .listToArray(chr(10));
 
-
         var gammaArray = [];
         for(i = 1; i <= inputs[1].len(); i++){
             gammaArray[i] = 0
@@ -45,7 +44,75 @@ component {
     }
 
     function part2(){
+        var inputs = fileRead("./inputs.txt").listToArray(chr(10));
+        var inputs2 = inputs;
+
+        var totalLoops = inputs[1].len();
+
+        //totalLoops = 1;
+
+        for( i = 1; i <= totalLoops; i++){
+            inputs = recurseFunction(inputs,i);
+            inputs2 = recurseFunction2(inputs2,i);
+        }
+
+        print.line(inputs);
+        print.line(inputs2);
+
+        print.line(  inputBaseN(inputs[1],2)  );
+        print.line(  inputBaseN(inputs2[1],2)  );
+
+        print.line( inputBaseN(inputs[1],2) * inputBaseN(inputs2[1],2))
+    }
+
+    function recurseFunction( itemsArray, positionNumber ){
+        var arraySize = arguments.itemsArray.len();
+        var oneCounter = 0;
         
+        itemsArray.each((element) => {
+            if(element[positionNumber] == "1"){
+                oneCounter++;
+            }
+        });
+
+        newArray = [];
+
+        itemsArray.each((element,index) => {
+            if( oneCounter >= (arraySize/ 2 ) and element[positionNumber] == "1" ){
+                newArray.append(element)
+            } else if (oneCounter < (arraySize / 2) and element[positionNumber] == "0") {
+                newArray.append(element)
+            }
+        });
+
+        return newArray;
+    }
+
+    function recurseFunction2( itemsArray, positionNumber ){
+        var arraySize = arguments.itemsArray.len();
+        var oneCounter = 0;
+
+        if(arraySize == 1){
+            return itemsArray;
+        }
+        
+        itemsArray.each((element) => {
+            if(element[positionNumber] == "1"){
+                oneCounter++;
+            }
+        });
+
+        newArray = [];
+
+        arguments.itemsArray.each((element) => {
+            if( oneCounter >= (arraySize / 2) and element[positionNumber] == "0" ){
+                newArray.append(element)
+            } else if ( oneCounter < (arraySize / 2) and element[positionNumber] == "1") {
+                newArray.append(element);
+            }
+        });
+
+        return newArray;
     }
 
 }
