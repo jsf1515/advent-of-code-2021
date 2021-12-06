@@ -11,6 +11,7 @@ component {
             .map((element) => {
 
                 /*
+                 * cleanup the inputs
                  * remove leading white spaces
                  * change all double spaces to single spaces
                  * break string apart into array with space as delimiter
