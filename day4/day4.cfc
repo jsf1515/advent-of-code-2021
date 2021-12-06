@@ -11,7 +11,6 @@ component {
             .map((element) => {
 
                 /*
-                 * change the input from formatted text into an array
                  * remove leading white spaces
                  * change all double spaces to single spaces
                  * break string apart into array with space as delimiter
