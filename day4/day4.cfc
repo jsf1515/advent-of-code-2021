@@ -2,7 +2,7 @@ component {
 
     function part1(){
         /*
-         * we're going to build a 3D array to model the cards
+         * 3D array to model the cards
          */
         var cardArray = arrayNew(3);
 
