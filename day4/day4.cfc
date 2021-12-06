@@ -6,7 +6,7 @@ component {
          */
         var cardArray = arrayNew(3);
 
-        var cardInputs = fileRead("./day4_cards_sample.txt")
+        var cardInputs = fileRead("./day4_cards.txt")
             .listToArray(chr(10))
             .map((element) => {
 
@@ -31,7 +31,8 @@ component {
                 cardArray[ceiling(index/5)].append(element);
             });
 
-        
+        var numberPulls = fileRead("./day4_numberPulls.txt");
+
 
     }
 }
