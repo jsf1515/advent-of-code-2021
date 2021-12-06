@@ -6,6 +6,9 @@ component {
          */
         var cardArray = arrayNew(3);
 
+        /*
+         * get the bingo cards from the text inputs
+         */
         var cardInputs = fileRead("./day4_cards.txt")
             .listToArray(chr(10))
             .map((element) => {
@@ -22,17 +25,28 @@ component {
                     .replace("  "," ","all")
                     .listToArray(" ")
             })
-            .each((element,index) => {
+            .map((cardRow) => {
 
                 /*
-                 * build up a the 3D array
+                 * Turn each card "cell" into a struct of that number,
+                 * and a boolean for that cells picked/not picked status
                  */
 
+                return cardRow.map((cardCell) => {
+                    return {
+                        "number" : cardCell,
+                        "picked" : false
+                    }
+                });
+            })
+            .each((element,index) => {
                 cardArray[ceiling(index/5)].append(element);
             });
 
+        /*
+         * Get the input of the numbers as they were pulled from the pot
+         */
         var numberPulls = fileRead("./day4_numberPulls.txt");
-
 
     }
 }
