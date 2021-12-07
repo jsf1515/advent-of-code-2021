@@ -71,19 +71,20 @@ component {
                     if(rowWinner == true){
                         winner = true;
                         winningCard = card;
+
                         if(winningNumber == 0){
                             winningNumber = pickedNumber
                         }
-                        //writeDump("x axis winner");
-                        //writeDump(card)
                     }
                 }
 
                 if( winner == false ){
-                    if( card[1][1].picked == true && card[2][1].picked == true && card[3][1].picked == true && card[4][1].picked  == true && card[5][1].picked  == true){
-                        winner = true;
-                        winningCard = card;
-                        winningNumber = pickedNumber
+                    for(x = 1; x<= 5; x++){
+                        if( winner == false && card[1][x].picked == true && card[2][x].picked == true && card[3][x].picked == true && card[4][x].picked  == true && card[5][x].picked  == true){
+                            winner = true;
+                            winningCard = card;
+                            winningNumber = pickedNumber
+                        }
                     }
                 }
 
