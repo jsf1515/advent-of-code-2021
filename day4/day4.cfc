@@ -46,7 +46,63 @@ component {
         /*
          * Get the input of the numbers as they were pulled from the pot
          */
-        var numberPulls = fileRead("./day4_numberPulls.txt");
+        var numberPulls = fileRead("./day4_numberPulls.txt").listToArray();
+
+        var winner = false;
+        var winningCard = []
+        var winningNumber = 0;
+
+        for( pickedNumber in numberPulls ){
+            for( card in cardArray ){
+                for( cardRow in card ) {
+                    
+                    rowWinner = true;
+
+                    cardRow.each((element) => {
+                        if(winner == false and element.number == pickedNumber){
+                            element.picked = true;
+                        }
+
+                        if(element.picked == false){
+                            rowWinner = false;
+                        }
+                    });
+
+                    if(rowWinner == true){
+                        winner = true;
+                        winningCard = card;
+                        if(winningNumber == 0){
+                            winningNumber = pickedNumber
+                        }
+                        //writeDump("x axis winner");
+                        //writeDump(card)
+                    }
+                }
+
+                if( winner == false ){
+                    if( card[1][1].picked == true && card[2][1].picked == true && card[3][1].picked == true && card[4][1].picked  == true && card[5][1].picked  == true){
+                        winner = true;
+                        winningCard = card;
+                        winningNumber = pickedNumber
+                    }
+                }
+
+            }
+        }
+
+        var runningSum = 0;
+
+        for( row in winningCard ){
+            for( cell in row ){
+                if( cell.picked == false ){
+                    runningSum = runningSum + cell.number
+                }
+            }
+        }
+
+        print.line("winning numbe was " & winningNumber);
+        print.line("remaining sum was " & runningSum);
+        print.line("input code is " & runningSum * winningNumber )
 
     }
 }
