@@ -19,7 +19,7 @@ component {
                      * and the fuel cost grows by 1 for each move
                      * so 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11
                      * ---------------------------------
-                     * the math formula for that is (n(n+1)) / 2
+                     * the math formula for that is n(n+1) / 2
                      * where n is our largest number
                      */
 
