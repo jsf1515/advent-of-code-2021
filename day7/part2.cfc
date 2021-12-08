@@ -7,7 +7,7 @@ component {
             return int(element);
         });
 
-        fuelUsed = [];
+        var fuelUsed = [];
 
         for(startDepth in inputs){
             fuelUsed.append( inputs
@@ -24,7 +24,7 @@ component {
                      */
 
                     var howFar = abs(startDepth - endDepth);
-                    
+
                     return fuelBurn = howFar * (howFar + 1) / 2;
                 })
                 .reduce((previous,next) => {
