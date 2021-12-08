@@ -9,7 +9,7 @@ component {
 
         fuelUsed = [];
 
-        for( startDepth in inputs){
+        for(startDepth in inputs){
             fuelUsed.append( inputs
                 .map((endDepth) => {
 
@@ -23,11 +23,9 @@ component {
                      * where n is our largest number
                      */
 
-                    var howFar = abs(startDepth - endDepth); // spaces between the 2 points
-
-                    var fuelBurn = howFar * (howFar + 1) / 2;
-
-                    return fuelBurn;
+                    var howFar = abs(startDepth - endDepth);
+                    
+                    return fuelBurn = howFar * (howFar + 1) / 2;
                 })
                 .reduce((previous,next) => {
                     return previous + next
