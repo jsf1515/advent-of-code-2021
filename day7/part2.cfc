@@ -10,7 +10,7 @@ component {
         fuelUsed = [];
 
         for( i = inputs.min(); i <= inputs.max(); i++){
-            fuelUsed[i + 1] = inputs
+            fuelUsed.append( inputs
                 .map((element) => {
 
                     /*
@@ -22,7 +22,7 @@ component {
                      * the math formula for that is (n(n+1)) / 2
                      * where n is our largest number
                      */
-                     
+
                     var howFar = abs(i - element);
                     var fuelBurn = ((howFar + 1) * howFar) / 2;
 
@@ -31,6 +31,7 @@ component {
                 .reduce((previous,next) => {
                     return previous + next
                 },0)
+            )
         }
 
         print.line("min fuel used is ::: " & fuelUsed.min());
