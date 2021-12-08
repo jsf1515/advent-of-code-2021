@@ -25,7 +25,7 @@ component {
 
                     var howFar = abs(startDepth - endDepth);
 
-                    return fuelBurn = howFar * (howFar + 1) / 2;
+                    return howFar * (howFar + 1) / 2;
                 })
                 .reduce((previous,next) => {
                     return previous + next;
