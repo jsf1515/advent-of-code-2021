@@ -23,7 +23,8 @@ component {
                      * where n is our largest number
                      */
 
-                    var howFar = abs(i - element);
+                    var howFar = abs(i - element); // spaces between start and end
+                    
                     var fuelBurn = howFar * (howFar + 1) / 2;
 
                     return fuelBurn;
