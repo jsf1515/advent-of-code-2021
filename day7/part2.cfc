@@ -1,6 +1,6 @@
 component {
     
     function run(){
-        print.line( "in part 2" );
+        var inputs = [16,1,2,0,4,2,7,1,2,14];
     }
 }
