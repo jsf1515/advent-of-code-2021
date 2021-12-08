@@ -28,9 +28,9 @@ component {
                     return fuelBurn = howFar * (howFar + 1) / 2;
                 })
                 .reduce((previous,next) => {
-                    return previous + next
+                    return previous + next;
                 },0)
-            )
+            );
         }
 
         print.line("min fuel used is ::: " & fuelUsed.min());
