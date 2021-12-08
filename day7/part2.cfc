@@ -24,7 +24,7 @@ component {
                      */
 
                     var howFar = abs(i - element);
-                    var fuelBurn = ((howFar + 1) * howFar) / 2;
+                    var fuelBurn = howFar * (howFar + 1) / 2;
 
                     return fuelBurn;
                 })
