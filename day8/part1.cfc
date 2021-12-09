@@ -7,7 +7,6 @@ component {
             return element.len()
         });
 
-        //var inputs = fileRead("./inputs_test.txt")
         var inputs = fileRead("./inputs.txt")
             .listToArray(chr(10))
             .map((element) => {
