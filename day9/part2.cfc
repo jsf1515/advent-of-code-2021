@@ -58,9 +58,11 @@ component {
                         }
                     }
                 });
-            })
+            });
 
-            print.line(foundLows)
+            foundLows.each((element) => {
+                print.line("starting point " & element[1] & "," & element[2])
+            })
     }
 
 }
