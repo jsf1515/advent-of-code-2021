@@ -23,7 +23,7 @@ component {
                     } else if (index == 1){
                         // remaining top row
                         if( subElement < subArray[subIndex - 1] && subElement < subArray[subIndex + 1] && subElement < array[index+1][subIndex] ){
-                            foundLows.append(subElement)
+                            foundLows.append(subElement);
                         }
                     } else if ( index == array.len() && subIndex == 1){
                         // bottom left
@@ -38,22 +38,22 @@ component {
                     } else if ( index == array.len() ){
                         // rest of bottom row
                         if( subElement < subArray[subIndex - 1] && subElement < subArray[subIndex + 1] && subElement < array[index-1][subIndex] ){
-                            foundLows.append(subElement)
+                            foundLows.append(subElement);
                         }
                     } else if ( subIndex == 1){
                         // left edge
                         if( subElement < array[index+1][subIndex] && subElement < array[index-1][subIndex] && subElement < subArray[subIndex+1]){
-                            foundLows.append(subElement)
+                            foundLows.append(subElement);
                         }
                     } else if ( subIndex == subArray.len()){
                         // right edge
                         if( subElement < array[index+1][subIndex] && subElement < array[index-1][subIndex] && subElement < subArray[subIndex-1]){
-                            foundLows.append(subElement)
+                            foundLows.append(subElement);
                         }
                     } else {
                         // middle
                         if( subElement < array[index+1][subIndex] && subElement < array[index-1][subIndex] && subElement < subArray[subIndex-1] && subElement < subArray[subIndex+1]){
-                            foundLows.append(subElement)
+                            foundLows.append(subElement);
                         }
                     }
                 });
