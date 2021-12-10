@@ -41,12 +41,12 @@ component {
                             foundLows.append(subElement)
                         }
                     } else if ( subIndex == 1){
-                        // left corner
+                        // left edge
                         if( subElement < array[index+1][subIndex] && subElement < array[index-1][subIndex] && subElement < subArray[subIndex+1]){
                             foundLows.append(subElement)
                         }
                     } else if ( subIndex == subArray.len()){
-                        // right corner
+                        // right edge
                         if( subElement < array[index+1][subIndex] && subElement < array[index-1][subIndex] && subElement < subArray[subIndex-1]){
                             foundLows.append(subElement)
                         }
